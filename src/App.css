@@ -1,42 +1,216 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: #f9fafb;
+  color: #111827;
+  line-height: 1.5;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  color: #2563eb;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
+/* Container */
+div {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Forms */
+form {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button[type="button"], button[type="submit"] {
+  background-color: #10b981;
+  color: white;
+}
+
+button[type="button"]:hover, button[type="submit"]:hover {
+  background-color: #059669;
+}
+
+.button-cancel {
+  background-color: #ef4444;
+  color: white;
+}
+
+.button-cancel:hover {
+  background-color: #dc2626;
+}
+
+/* Layout */
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Expense/Income items */
+li div {
+  display: flex;
+  flex-direction: column;
+}
+
+li div p {
+  margin-bottom: 0.25rem;
+}
+
+/* Form buttons */
+form button {
+  min-width: 80px;
+}
+
+/* Cards (Dashboard & Statistics) */
 .card {
-  padding: 2em;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.card .icon {
+  font-size: 1.5rem;
+}
+
+.card dl {
+  margin-top: 0.5rem;
+}
+
+.card dd {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Dashboard/Statistics layout */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+}
+
+/* Links inside forms */
+form div a {
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Responsive charts container */
+.chart-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 1rem;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.label {
+  color: #666666ce;  /* darker gray for keys */
+  font-weight: bold; /* optional */
+  margin-right: 4px;
 }
