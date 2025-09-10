@@ -840,6 +840,7 @@ const Statistics = () => {
         statsService.getChartData(),
         statsService.getStats()
       ]);
+
       setChartData(chartResponse.data);
       setStats(statsResponse.data);
     } catch (error) {
@@ -862,6 +863,7 @@ const Statistics = () => {
       if (!dateMap.has(date)) dateMap.set(date, { date, income: 0, expense: 0 });
       dateMap.get(date).income += income.amount;
     });
+
     return Array.from(dateMap.values()).sort((a, b) => new Date(a.date) - new Date(b.date));
   };
 
@@ -872,6 +874,7 @@ const Statistics = () => {
       const category = expense.category;
       categoryMap.set(category, (categoryMap.get(category) || 0) + expense.amount);
     });
+
     return Array.from(categoryMap.entries()).map(([name, value]) => ({ name, value }));
   };
 
